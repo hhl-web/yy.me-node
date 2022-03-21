@@ -6,7 +6,8 @@ import errorHandler from './middlerwares/errorHandler'
 import render from 'koa-swig'
 import co from 'co'
 import log4js   from 'log4js'
-import {historyApiFallback} from 'koa2-connect-history-api-fallback'
+import {historyApiFallback} from 'koa2-connect-history-api-fallback';
+import query  from './processors/mysql';
 const app = new Koa();
 
 log4js.configure({
