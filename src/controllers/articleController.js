@@ -20,4 +20,4 @@ class ArticleController extends Controller{
     }
 }
 
-module.exports = ArticleController;
+export default ArticleController;

@@ -1,7 +1,7 @@
 import Koa from 'koa'
 import config from './config/index'
 import InitController from './controllers'
-import serve from 'koa-static'
+// import serve from 'koa-static'
 import errorHandler from './middlerwares/errorHandler'
 import render from 'koa-swig'
 import co from 'co'
@@ -38,7 +38,7 @@ const  logger = log4js.getLogger('globalError');
 const loggerHttp = log4js.getLogger('http');
 errorHandler.error(app,logger);
 
-app.use(serve(config.staticDir));
+// app.use(serve(config.staticDir));
 
 app.use(historyApiFallback({index:'/',whiteList: ['/api','/model'] }));
 
@@ -52,6 +52,7 @@ app.context.render = co.wrap(render({
     varControls:['[[',']]'],
     autoescape: true,
 }));
+
 
 app.listen(config.port,(ctx)=>{
     console.log(`server is running: http://localhost:${config.port}`)

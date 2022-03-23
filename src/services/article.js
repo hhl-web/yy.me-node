@@ -1,5 +1,5 @@
 import Article from '../models/article';
-import v4 from 'uuid';
+const v4 =require('uuid')
 class ArticleService{
     //根据分类新增文章
     async createArticle(params){
