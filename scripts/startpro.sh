@@ -1,0 +1,1 @@
+npm run pro && node './dist/server.bundle.js'

@@ -3,7 +3,7 @@ const proConfig ={
     port:80,
     viewCache:false,
     db:{
-        host:'',
+        host:'localhost',
         user:'',
         password:'',
         database:'',
@@ -20,4 +20,5 @@ const proConfig ={
         }
     }
 };
-module.exports =proConfig;
+
+export default proConfig;

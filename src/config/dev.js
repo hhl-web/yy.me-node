@@ -1,11 +1,12 @@
-const path = require('path');
+
+import path from 'path';
 const devConfig ={
-    port:3001,
+    port:3002,
     staticDir:path.join(__dirname,'../','assets'),
     viewDir: path.join(__dirname,'../','views'),
     viewCache:false,
     db:{
-        host:'',
+        host:'localhost',
         user:'',
         password:'',
         database:'',
@@ -23,4 +24,4 @@ const devConfig ={
     }
 }
 
-module.exports =devConfig;
+export default devConfig;

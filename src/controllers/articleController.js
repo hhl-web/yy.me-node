@@ -1,4 +1,4 @@
-const Controller =require('./controller');
+import Controller from './controller';
 import ArticleService  from '../services/article';
 
 

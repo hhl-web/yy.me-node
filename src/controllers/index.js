@@ -1,5 +1,6 @@
 
-const Router = require('koa-Router');
+// const Router = require('koa-Router');
+import Router from 'koa-Router'
 const router =new Router();
 
 import ArticleController from './articleController';
@@ -15,5 +16,4 @@ class InitController {
     }
 }
 
-export default InitController
-// module.exports =  InitController;
+export default InitController;

@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
-debugger;
 const webpackConfig = {
   target: 'node',
   entry: {

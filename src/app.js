@@ -1,6 +1,6 @@
-import Koa from 'koa'
-import config from './config/index'
-import InitController from './controllers'
+import Koa from 'koa';
+import config from './config/index';
+import InitController from './controllers/index';
 // import serve from 'koa-static'
 import errorHandler from './middlerwares/errorHandler'
 import render from 'koa-swig'
@@ -52,8 +52,6 @@ app.context.render = co.wrap(render({
     varControls:['[[',']]'],
     autoescape: true,
 }));
-
-
 app.listen(config.port,(ctx)=>{
     console.log(`server is running: http://localhost:${config.port}`)
 });

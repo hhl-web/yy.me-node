@@ -1,7 +1,10 @@
 
 class Controller{
     constructor(){
-        
+        this.params ={};
+    }
+    dealParams(){
+
     }
 }
-module.exports =Controller;
+export default Controller;
