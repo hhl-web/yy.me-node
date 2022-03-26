@@ -1,12 +1,13 @@
 import Koa from 'koa';
 import config from './config/index';
 import InitController from './controllers/index';
-// import serve from 'koa-static'
+import serve from 'koa-static'
 import errorHandler from './middlerwares/errorHandler'
 import render from 'koa-swig'
 import co from 'co'
 import log4js   from 'log4js'
 import {historyApiFallback} from 'koa2-connect-history-api-fallback';
+import bodyParser from 'koa-bodyparser';
 const app = new Koa();
 
 log4js.configure({
@@ -38,8 +39,8 @@ const  logger = log4js.getLogger('globalError');
 const loggerHttp = log4js.getLogger('http');
 errorHandler.error(app,logger);
 
-// app.use(serve(config.staticDir));
-
+app.use(bodyParser);
+app.use(serve(config.staticDir));
 app.use(historyApiFallback({index:'/',whiteList: ['/api','/model'] }));
 
 InitController.init(app,loggerHttp);

@@ -1,5 +1,4 @@
 
-// const Router = require('koa-Router');
 import Router from 'koa-Router'
 const router =new Router();
 

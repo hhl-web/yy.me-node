@@ -1,16 +1,28 @@
 import Article from '../models/article';
 const v4 =require('uuid')
 class ArticleService{
-    //根据分类新增文章
+    /**
+     * 新增文章
+     * @categoty_id
+     * @cover_url
+     * @content
+     * @title
+     */
     async createArticle(params){
         params.id =v4();
         return Article.create(params);
     }
-    // 根据分类查询文章
-    async getArticleByClassification(classification){
+     /**
+     * 根据分类查询文章
+     * @categoty_id
+     * @cover_url
+     * @content
+     * @title
+     */
+    async getArticleByCategotyId(categoty_id){
         return Article.findAll({
             where:{
-                classification
+                categoty_id
             }
         })
     }
