@@ -15,7 +15,7 @@
     "webpack:debug": "node --inspect-brk ./node_modules/.bin/webpack --config build/webpack.config.pro.js --progress",
     "watch": "cross-env NODE_ENV=development webpack --watch --config build/webpack.config.dev.js --progress",
     "debug": "nodemon --inspect dist/server.bundle.js",
-    "sync:table":"node processors/sync_table.js"
+    "sync:table":"node processors/init_db.js"
   },
   "author": "hhl",
   "license": "ISC",

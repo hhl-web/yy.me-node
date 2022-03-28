@@ -20,7 +20,8 @@ const sequelize =new Sequelize(
             charset:'utf8mb4',  //字符集
             collate:'utf8mb4_unicode_ci'
         },
-        define:{   //模型设置
+        //模型设置
+        define:{   
             freezeTableName:true,    //自定义表面，不设置会自动将表名转为复数形式
             timestamps:false    //自动生成更新时间、创建时间字段：updatedAt,createdAt
         }

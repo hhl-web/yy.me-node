@@ -1,4 +1,4 @@
-import ArticleCategoty from '../models/article_categoty.js';
+import ArticleCategoty from '../processors/sync_table';
 const v4 =require('uuid')
 class ArticleCategotyService{
      /**

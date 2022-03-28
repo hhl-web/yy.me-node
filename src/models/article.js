@@ -4,10 +4,11 @@ import {defineModel,Sequelize} from '../processors/db';
 
 const Article = defineModel("article", {   
     /**文章id */
-    article_id:{
+    id:{
         type: Sequelize.INET, // 字段类型
         allowNull: false, // 是否允许为空
         primaryKey: true, // 是否主键
+        autoIncrement: true
     },
     /**文章标题 */
     title:{
@@ -33,6 +34,11 @@ const Article = defineModel("article", {
     view_count:{
         type:Sequelize.INET,
         allowNull: true, // 是否允许为空
+    },
+    /**是否原创 */
+    is_original:{
+        type:Sequelize.BOOLEAN,
+        allowNull: false, // 是否允许为空
     }
 })
 

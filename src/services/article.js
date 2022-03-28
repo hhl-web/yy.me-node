@@ -1,4 +1,10 @@
-import Article from '../models/article';
+import {
+    ArticleCategoty,
+    ArticleTag,
+    Article,
+    CommentTable,
+    ReplayTable
+} from '../processors/init_db.js'
 const v4 =require('uuid')
 class ArticleService{
     /**
@@ -10,7 +16,8 @@ class ArticleService{
      */
     async createArticle(params){
         params.id =v4();
-        return Article.create(params);
+        const ret= await Article.create(params);
+        ArticleCategoty
     }
      /**
      * 根据分类查询文章
