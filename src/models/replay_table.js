@@ -4,13 +4,13 @@ import {defineModel,Sequelize} from '../processors/db';
 const ReplayTable = defineModel("replay_table",{           
     /**回复id */
     replay_id:{
-        type: Sequelize.INET, // 字段类型
+        type: Sequelize.CHAR, // 字段类型
         allowNull: false, // 是否允许为空
         primaryKey: true, // 是否主键
     },
     /**评论id */
     commont_id:{
-        type: Sequelize.INET, // 字段类型
+        type: Sequelize.CHAR, // 字段类型
         allowNull: false, // 是否允许为空
 
     },

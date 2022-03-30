@@ -4,13 +4,13 @@ import {defineModel,Sequelize} from '../processors/db';
 const  ArticleTag=defineModel('article_tag', {   
     /**标签id */
     tag_id:{
-        type: Sequelize.INET, // 字段类型
+        type: Sequelize.CHAR, // 字段类型
         allowNull: false, // 是否允许为空
         primaryKey: true, // 是否主键
     },
     /**文章id */
     article_id:{
-        type: Sequelize.INET, // 字段类型
+        type: Sequelize.CHAR, // 字段类型
         allowNull: false, // 是否允许为空
     },
      /**标签名称 */

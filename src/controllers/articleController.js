@@ -21,13 +21,13 @@ class ArticleController extends Controller{
     async create(ctx){
         console.log(ctx);
         const reqParams = ctx.request.body;
-        try{
-            const result=await ArticleService.create(reqParams);
-            console.log(result)
-            ctx.body=this.dealResponse(200,result)
-        }catch(err){
-            ctx.body=this.dealResponse(500,result)
-        }
+        console.log(reqParams,'reqParams')
+        // try{
+            const result=await ArticleService.createArticle(reqParams);
+            // ctx.body=this.dealResponse(200,result)
+        // }catch(err){
+            // ctx.body=this.dealResponse(500,result)
+        // }
     }
 }
 

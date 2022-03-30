@@ -5,7 +5,7 @@ import {defineModel,Sequelize} from '../processors/db';
 const Article = defineModel("article", {   
     /**文章id */
     id:{
-        type: Sequelize.INET, // 字段类型
+        type: Sequelize.INTEGER, // 字段类型
         allowNull: false, // 是否允许为空
         primaryKey: true, // 是否主键
         autoIncrement: true
@@ -22,23 +22,23 @@ const Article = defineModel("article", {
     },
     /**文章封面 */
     cover_url:{
-        type: Sequelize.INET, // 字段类型
+        type: Sequelize.CHAR, // 字段类型
         allowNull: false, // 是否允许为空
     },
     /**点赞数 */
     like_count:{
-        type:Sequelize.INET,
+        type:Sequelize.CHAR,
         allowNull: true, // 是否允许为空
     },
     /**浏览量 */
     view_count:{
-        type:Sequelize.INET,
+        type:Sequelize.CHAR,
         allowNull: true, // 是否允许为空
     },
     /**是否原创 */
     is_original:{
         type:Sequelize.BOOLEAN,
-        allowNull: false, // 是否允许为空
+        allowNull: true, // 是否允许为空
     }
 })
 

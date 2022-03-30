@@ -5,7 +5,6 @@ import config from '../config/index';
 const options =config.db || {};
 const optConfig =config.dbConfig || {}
 
-console.log('init sequelize----')
 const sequelize =new Sequelize(
     options.database,
     options.user,

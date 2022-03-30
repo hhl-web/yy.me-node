@@ -2,8 +2,8 @@
 import path from 'path';
 const devConfig ={
     port:3009,
-    staticDir:path.join(__dirname,'../','assets'),
-    viewDir: path.join(__dirname,'../','views'),
+    // staticDir:path.join(__dirname,'../','assets'),
+    // viewDir: path.join(__dirname,'../','views'),
     viewCache:false,
     db:{
         host:'127.0.0.1',
@@ -13,7 +13,7 @@ const devConfig ={
         port:'3306'
     },
     dbConfig:{
-        logging:false,
+        logging:true,
         dialect:'mysql',
         pool:{
             min:0,

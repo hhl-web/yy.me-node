@@ -4,7 +4,7 @@ import {
     Article,
     CommentTable,
     ReplayTable
-} from '../processors/init_db.js'
+} from '../processors/init.js'
 const v4 =require('uuid')
 class ArticleService{
     /**
@@ -15,9 +15,23 @@ class ArticleService{
      * @title
      */
     async createArticle(params){
-        params.id =v4();
-        const ret= await Article.create(params);
-        ArticleCategoty
+        console.log(params,'---')
+        try{
+            const article= await Article.create(params);
+            const articleCategoty= await ArticleCategoty.create({
+                categoty_id:params.categoty_id,
+                article_id:params.id,
+                categoty_name:params.categoty_name
+            });
+            console.log(11,article);
+        }catch(err){
+            console.log(err)
+        }
+        // params.id =v4();
+       
+        
+  
+       
     }
      /**
      * 根据分类查询文章
