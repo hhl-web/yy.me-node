@@ -1,5 +1,5 @@
 
-class Controller{
+export class Controller{
     dealParams(){
 
     }
@@ -19,4 +19,3 @@ class Controller{
         }
     }
 }
-export default Controller;

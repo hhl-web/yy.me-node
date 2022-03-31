@@ -1,7 +1,8 @@
 
-const proConfig ={
+export const proConfig ={
     port:80,
     viewCache:false,
+    crossDomain:{},
     db:{
         host:'localhost',
         user:'',
@@ -21,4 +22,3 @@ const proConfig ={
     }
 };
 
-export default proConfig;

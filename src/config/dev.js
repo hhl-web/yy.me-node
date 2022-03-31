@@ -1,7 +1,11 @@
 
 import path from 'path';
-const devConfig ={
+export const devConfig ={
     port:3009,
+    crossDomain:{
+        allowedOrigins:[`http://localhost:3009`],
+        allowedReferer:''
+    },
     // staticDir:path.join(__dirname,'../','assets'),
     // viewDir: path.join(__dirname,'../','views'),
     viewCache:false,
@@ -13,7 +17,7 @@ const devConfig ={
         port:'3306'
     },
     dbConfig:{
-        logging:true,
+        logging:false,
         dialect:'mysql',
         pool:{
             min:0,
@@ -23,5 +27,3 @@ const devConfig ={
         }
     }
 }
-
-export default devConfig;
