@@ -1,1 +1,11 @@
-[2022-03-31T22:39:29.107] [ERROR] globalError - t is not defined
+[2022-04-04T19:47:20.101] [ERROR] globalLog - ReferenceError: y is not defined
+    at ArticleController.searchBycc (webpack-internal:///./src/controllers/articleController.js:19:17)
+    at eval (webpack-internal:///./src/controllers/index.js:12:68)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at eval (webpack-internal:///./node_modules/koa-Router/lib/router.js:372:16)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:34:12
+    at dispatch (webpack-internal:///./node_modules/koa-Router/lib/router.js:377:31)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:79:51
+    at step (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:38:23)

@@ -1,16 +1,29 @@
 
-// 成功装饰器
-export const HttpSuccess =(message,code,data)=>{
-    return {
-        code,
-        message,
-        data
+export const buildHttpDecorator =(options)=>{
+    const {errMsg,successMsg,successCode,errCode,data} =options;
+    return ()=>{
+        if(errCode){
+            return {
+                code:errCode,
+                msg:errMsg
+            }
+        }
+        if(successCode){
+            return {
+                code:successCode,
+                msg:successMsg,
+                data
+            }
+        }
+        
     }
 }
-// 失败装饰器
-export const HttpError =(message,code)=>{
-    return{
-        code,
-        message
-    }
+
+// 成功返回值
+export const HttpSuccess =(successMsg,successCode,data)=>{
+   return buildHttpDecorator({successMsg,successCode,data})()
+}
+// 失败返回值
+export const HttpError =(errMsg,errCode)=>{
+    return buildHttpDecorator({errMsg,errCode})()
 }

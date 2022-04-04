@@ -1,11 +1,16 @@
 import {HttpBadRequestError} from '../errors/bad-request.error';
 import { HttpCustomError } from '../errors/custom.error';
 export class ErrorInterceptor{
-    constructor(ctx){
-        const status =ctx.response.status
-        this.init(status);
+    constructor(options){
+        const {ctx,status} =options;
+        this.init(ctx,status);
     }
-    init(status){
+    /**
+     * 错误拦截器
+     * @param {*} status 
+     * 
+     */
+    init(ctx,status){
         if(status === 400){
             new HttpBadRequestError(ctx);
         }else if(status === 500){

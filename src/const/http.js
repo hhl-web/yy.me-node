@@ -5,3 +5,4 @@ export const HttpStatus ={
 
 export const HTTP_BAD_REQUEST_TEXT_DEFAULT='Unknow error';
 export const HTTP_CUSTOM_TEXT_DEFAULT='Server error';
+export const VALIDATION_ERROR_DEFAULT = 'Invalid params';

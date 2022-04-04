@@ -6,6 +6,9 @@ export class HttpBadRequestError{
     }
     init(ctx,errorMsg,status){
         ctx.response.status =200;
-        ctx.response.body = HttpError(status || HttpStatus.BAD_REQUEST,errorMsg || HTTP_BAD_REQUEST_TEXT_DEFAULT)
+        ctx.response.body = HttpError(
+            status || HttpStatus.BAD_REQUEST,
+            errorMsg || HTTP_BAD_REQUEST_TEXT_DEFAULT
+        );
     }
 }

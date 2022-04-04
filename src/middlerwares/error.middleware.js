@@ -1,14 +1,16 @@
 import { LoggerInterceptor } from '../interceptor/logger.interceptor';
-import {ErrorInterceptor} from '../interceptor/error.interceptor'
-
+import {HttpInterceptor} from '../interceptor/http.interceptor';
+import { HttpCustomError } from '../errors/custom.error';
 export class ErrorMiddleware{
     static error(logger){
         return async (ctx,next)=>{
             try{
-                // 请求之前用户的数据
+                // 请求之前拦截
                 await next();
-                new ErrorInterceptor(ctx);
+                // 请求之后拦截
+                new HttpInterceptor(ctx);
             }catch(error){
+                new HttpCustomError(ctx);
                 new LoggerInterceptor(ctx,logger,error);
             }
         }

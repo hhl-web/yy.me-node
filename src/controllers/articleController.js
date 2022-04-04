@@ -11,9 +11,9 @@ export class ArticleController extends Controller{
     async searchBycc(ctx){
         const reqParams=ctx.request.query;
         // await ArticleService.
-        // ctx.body = 'searchBycc';
-        console.log(t)
+        ctx.body = 'searchBycc';
         // ctx.body=500/
+        // console.log(y)
         // ctx.response.status = 500;
         // 
         // console.log(ctx)

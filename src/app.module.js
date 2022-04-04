@@ -2,18 +2,19 @@ import Koa from 'koa';
 import {ErrorMiddleware} from './middlerwares/error.middleware';
 import { CorsMiddleware } from './middlerwares/cors.middleware';
 import {InitController} from './controllers/index';
-import log4js   from 'log4js';
+import log4js from 'log4js';
 import {historyApiFallback} from 'koa2-connect-history-api-fallback';
 import bodyParser from 'koa-bodyparser';
 export class AppModule{
     constructor(option){
-        this.logger={};
-        this.loggerHttp={};
+        this.loggerGlobal={};
     }
    static createApp(){
         const app =new Koa();
         this.LogjsModule();
-        app.use(ErrorMiddleware.error(this.logger));
+        app.use(ErrorMiddleware.error({
+            loggerGlobal:this.loggerGlobal,
+        }));
         app.use(CorsMiddleware.cors());
         app.use(bodyParser(
             {
@@ -32,29 +33,18 @@ export class AppModule{
     static LogjsModule(){
         log4js.configure({
             appenders: { 
-                globalError: { 
+                globalLog: { 
                     type: "file", 
                     filename: "./logs/error.log" 
                 },
-                httpLog:{
-                    type: "file", 
-                    filename: "./logs/info.log" 
-                },
-                
             },
             categories: { 
                 default: { 
-                    appenders: ["globalError"], 
+                    appenders: ["globalLog"], 
                     level: "error"
                 },
-                http:{
-                    appenders: ["httpLog"], 
-                    level: "info"
-                },
-              
             }
         })
-        this.logger= log4js.getLogger('globalError');
-        this.loggerHttp = log4js.getLogger('http');
+        this.loggerGlobal= log4js.getLogger('globalLog');
     }
 }
