@@ -2,13 +2,13 @@ import {defineModel,Sequelize} from '../processors/db';
 
 //文章表
 
-const Article = defineModel("article", {   
+export const Article = defineModel("article", {   
     /**文章id */
-    id:{
-        type: Sequelize.INTEGER, // 字段类型
+    article_id:{
+        type: Sequelize.CHAR, // 字段类型
         allowNull: false, // 是否允许为空
         primaryKey: true, // 是否主键
-        autoIncrement: true
+        // autoIncrement: true
     },
     /**文章标题 */
     title:{
@@ -23,7 +23,7 @@ const Article = defineModel("article", {
     /**文章封面 */
     cover_url:{
         type: Sequelize.CHAR, // 字段类型
-        allowNull: false, // 是否允许为空
+        allowNull: true, // 是否允许为空
     },
     /**点赞数 */
     like_count:{
@@ -39,7 +39,5 @@ const Article = defineModel("article", {
     is_original:{
         type:Sequelize.BOOLEAN,
         allowNull: true, // 是否允许为空
-    }
-})
-
-export default Article;
+    },
+});

@@ -1,5 +1,8 @@
 import {HttpBadRequestError} from '../errors/bad-request.error';
 import { HttpCustomError } from '../errors/custom.error';
+/**
+ * 错误拦截器
+ */
 export class ErrorInterceptor{
     constructor(options){
         const {ctx,status} =options;

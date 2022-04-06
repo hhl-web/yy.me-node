@@ -5,8 +5,7 @@ import {
     CommentTable,
     ReplayTable
 } from '../processors/init.js'
-const v4 =require('uuid')
-class ArticleService{
+export class ArticleService{
     /**
      * 新增文章
      * @categoty_id
@@ -14,24 +13,9 @@ class ArticleService{
      * @content
      * @title
      */
-    async createArticle(params){
-        console.log(params,'---')
-        try{
-            const article= await Article.create(params);
-            const articleCategoty= await ArticleCategoty.create({
-                categoty_id:params.categoty_id,
-                article_id:params.id,
-                categoty_name:params.categoty_name
-            });
-            console.log(11,article);
-        }catch(err){
-            console.log(err)
-        }
-        // params.id =v4();
-       
-        
-  
-       
+    static async create(params){
+        const instance= await Article.create(params);
+        return instance;
     }
      /**
      * 根据分类查询文章
@@ -60,4 +44,3 @@ class ArticleService{
     //评论 & 访问文章
 }
 
-export default new ArticleService();

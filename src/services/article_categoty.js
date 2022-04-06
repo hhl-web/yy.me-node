@@ -1,14 +1,20 @@
-import ArticleCategoty from '../processors/sync_table';
-const v4 =require('uuid')
-class ArticleCategotyService{
+import {
+    ArticleCategoty,
+    ArticleTag,
+    Article,
+    CommentTable,
+    ReplayTable
+} from '../processors/init.js'
+export class ArticleCategotyService{
     /**
      * 新增分类
      * @categoty_id
      * @article_id
      * @categoty_name
      */
-     async createArticleCategory(params){
-        const articleCategoty= await ArticleCategoty.create(params);
+    static async create(params){ 
+        const instance = await ArticleCategoty.create(params);
+        return instance;
     }
      /**
      * 根据分类id查询文章
@@ -25,5 +31,3 @@ class ArticleCategotyService{
         })
     }
 }
-
-export default new ArticleCategotyService();

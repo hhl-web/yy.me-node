@@ -1,5 +1,8 @@
 import { ErrorInterceptor } from "./error.interceptor";
 import { SuccessInterceptor } from "./success.interceptor";
+/**
+ * 请求拦截器
+ */
 export class HttpInterceptor{
     constructor(ctx){
         const status =ctx.response.status;

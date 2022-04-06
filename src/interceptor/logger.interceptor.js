@@ -1,12 +1,14 @@
 import { message } from 'koa/lib/response';
 import {HTTP_CUSTOM_TEXT_DEFAULT} from '../const/http';
-import {HttpCustomError} from '../errors/custom.error';
+/**
+ * 日志拦截器
+ */
 export class LoggerInterceptor{
     constructor(ctx,logger,error){
         this.loggerGlobal =logger.loggerGlobal;
-        this.init(ctx,error)
+        this.init(error)
     }
-    init(ctx,error){
+    init(error){
         this.loggerGlobal.error(error);
     }
 };
