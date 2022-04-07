@@ -7,27 +7,32 @@ export class ArticleController extends Controller{
     static  async create(ctx){
         const id =uuidv4();
         const {categoty_id,categoty_name,title,content,cover_url} =ctx.request.body;
-        await ArticleCategotyService.create({
-            id:id,
-            article_id:id,
-            categoty_id:categoty_id,
-            categoty_name:categoty_name,
-        });
         await ArticleService.create({
             article_id:id,
             title,
             content,
             cover_url
         });
+        await ArticleCategotyService.create({
+            id:id,
+            article_id:id,
+            categoty_id:categoty_id,
+            categoty_name:categoty_name,
+        });
         ctx.response.status =200;
-        ctx.response.data ='创建成功!';
     }
     // 根据分类查找文章
-    static async searchBycc(ctx){
-        const reqParams=ctx.request.query;
+    static async searchByCategoty(ctx){
+        const {categoty_id} =ctx.request.query;
+        const categotys=await ArticleCategotyService.findAll(categoty_id);
+        ctx.response.status =200;
+        ctx.body =categotys;
     }
     // 根据id查看详情
-    static searchById(ctx){
-        ctx.body = 'searchById'
+    static async searchByArticleId(ctx){
+        const {article_id} = ctx.request.query;
+        const article=await ArticleService.findOne(article_id);
+        ctx.response.status =200;
+        ctx.body = article;
     }
 }

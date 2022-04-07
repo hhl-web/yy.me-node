@@ -17,25 +17,11 @@ export class ArticleService{
         const instance= await Article.create(params);
         return instance;
     }
-     /**
-     * 根据分类查询文章
-     * @categoty_id
-     * @cover_url
-     * @content
-     * @title
-     */
-    async getArticleByCategotyId(categoty_id){
-        return Article.findAll({
-            where:{
-                categoty_id
-            }
-        })
-    }
     //根据文章id查看详情
-    async getArticleById(id){
-        return Article.findAll({
+    static async findOne(article_id){
+        return Article.findOne({
             where:{
-                id
+                article_id
             }
         })
     }

@@ -1,5 +1,5 @@
-import {ArticleCategoty} from '../models/article_category';
 import {Article} from '../models/article';
+import {ArticleCategoty} from '../models/article_category';
 import ArticleTag from '../models/article_tag';
 import CommentTable from '../models/comment_table';
 import ReplayTable from '../models/replay_table';
@@ -16,9 +16,23 @@ import { LoggerInterceptor } from '../interceptor/logger.interceptor.js';
 
 (async ()=>{
     try{
-        Article.hasMany(ArticleCategoty);
+        Article.hasMany(ArticleCategoty,{
+            as:'categotys',
+            foreignKey: {
+                allowNull: false,
+                name: "article_id"
+            },
+        })
+        ArticleCategoty.belongsTo(Article,{
+            as:'articles',
+            foreignKey: {
+                allowNull: false,
+                name: "article_id"
+            },
+        });
+        // ArticleCategoty.BelongsTo(Article);
         await sequelize.sync({
-            force: true, alter:true
+            force: false, alter:true
         });
     }catch(error){
         // new LoggerInterceptor()

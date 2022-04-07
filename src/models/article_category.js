@@ -5,7 +5,6 @@ export const ArticleCategoty =defineModel('article_categoty',{
         type: Sequelize.CHAR, // 字段类型
         allowNull: false, // 是否允许为空
         primaryKey: true, // 是否主键
-        // autoIncrement: true
     },   
     /**分类id */
     categoty_id:{

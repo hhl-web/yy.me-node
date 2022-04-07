@@ -18,16 +18,18 @@ export class ArticleCategotyService{
     }
      /**
      * 根据分类id查询文章
-     * @categoty_id
-     * @cover_url
-     * @content
-     * @title
      */
-    async getArticleByCategotyId(categoty_id){
-        return ArticleCategoty.findAll({
+    static async findAll(categoty_id){
+        const categotys= await ArticleCategoty.findAll({
             where:{
-                categoty_id
-            }
-        })
+                categoty_id,
+            },
+            include:{
+                model:Article,
+                as:'articles',
+            },
+            attributes:['categoty_id','categoty_name'],
+        });
+        return categotys;
     }
 }
