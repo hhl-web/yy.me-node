@@ -32,4 +32,10 @@ export class ArticleCategotyService{
         });
         return categotys;
     }
+    /**
+     * 获取分类列表
+     */
+    static async getCategoty(){
+
+    }
 }

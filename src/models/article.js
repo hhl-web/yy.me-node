@@ -25,6 +25,10 @@ export const Article = defineModel("article", {
         type: Sequelize.CHAR, // 字段类型
         allowNull: true, // 是否允许为空
     },
+    cover_name:{
+        type: Sequelize.CHAR, // 字段类型
+        allowNull: true, // 是否允许为空
+    },
     /**点赞数 */
     like_count:{
         type:Sequelize.CHAR,
