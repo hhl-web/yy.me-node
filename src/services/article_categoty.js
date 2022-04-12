@@ -12,14 +12,14 @@ export class ArticleCategotyService{
      * @article_id
      * @categoty_name
      */
-    static async create(params){ 
+    static async createArticleCategoty(params){ 
         const instance = await ArticleCategoty.create(params);
         return instance;
     }
      /**
      * 根据分类id查询文章
      */
-    static async findAll(categoty_id){
+    static async findAllByCategoty(categoty_id){
         const categotys= await ArticleCategoty.findAll({
             where:{
                 categoty_id,

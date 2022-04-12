@@ -30,7 +30,6 @@ import { LoggerInterceptor } from '../interceptor/logger.interceptor.js';
                 name: "article_id"
             },
         });
-        // ArticleCategoty.BelongsTo(Article);
         await sequelize.sync({
             force: false, alter:true
         });

@@ -32,7 +32,7 @@ const sequelize =new Sequelize(
  * @param {*} attributes  属性
  * @returns 
  */
-const defineModel = function (name, attributes) {
+const defineModel =  (name, attributes)=> {
     const attrs = {};
     for (let key in attributes) {
         let value = attributes[key];

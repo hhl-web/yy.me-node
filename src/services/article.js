@@ -13,12 +13,12 @@ export class ArticleService{
      * @content
      * @title
      */
-    static async create(params){
+    static async createArticle(params){
         const instance= await Article.create(params);
         return instance;
     }
     //根据文章id查看详情
-    static async findOne(article_id){
+    static async findOneByArticleId(article_id){
         return Article.findOne({
             where:{
                 article_id

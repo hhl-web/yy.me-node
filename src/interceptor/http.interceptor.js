@@ -18,7 +18,7 @@ export class HttpInterceptor{
         if(status !== 200){
             new ErrorInterceptor({ctx,status});
         }else{
-            new SuccessInterceptor({ctx,status,data});
+            new SuccessInterceptor({ctx,data});
         }
     }
 };

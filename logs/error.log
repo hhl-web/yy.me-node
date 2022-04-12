@@ -1,228 +1,5 @@
-[2022-04-07T23:04:10.339] [ERROR] globalLog - { Error
-    at Query.run (/Users/huanghuilin/Desktop/yy.me-node/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
-    at retry (/Users/huanghuilin/Desktop/yy.me-node/node_modules/sequelize/lib/sequelize.js:313:28)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-  name: 'SequelizeForeignKeyConstraintError',
-  parent:
-   { Error: Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON DELETE CASCADE ON UPDATE CASCADE)
-       at Packet.asError (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packets/packet.js:728:17)
-       at Execute.execute (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/commands/command.js:29:26)
-       at Connection.handlePacket (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:456:32)
-       at PacketParser.Connection.packetParser.p [as onPacket] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:85:12)
-       at PacketParser.executeStart (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packet_parser.js:75:16)
-       at Socket.Connection.stream.on.data (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:92:25)
-       at Socket.emit (events.js:198:13)
-       at addChunk (_stream_readable.js:287:12)
-       at readableAddChunk (_stream_readable.js:268:11)
-       at Socket.Readable.push (_stream_readable.js:223:10)
-     code: 'ER_NO_REFERENCED_ROW_2',
-     errno: 1452,
-     sqlState: '23000',
-     sqlMessage:
-      'Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON DELETE CASCADE ON UPDATE CASCADE)',
-     sql:
-      'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-     parameters:
-      [ '90e21378-75c5-4b06-a04a-6843d8f7db08',
-        '14',
-        '90e21378-75c5-4b06-a04a-6843d8f7db08',
-        '分类14',
-        0,
-        '2022-04-07 15:04:10',
-        '2022-04-07 15:04:10' ] },
-  original:
-   { Error: Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON DELETE CASCADE ON UPDATE CASCADE)
-       at Packet.asError (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packets/packet.js:728:17)
-       at Execute.execute (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/commands/command.js:29:26)
-       at Connection.handlePacket (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:456:32)
-       at PacketParser.Connection.packetParser.p [as onPacket] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:85:12)
-       at PacketParser.executeStart (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packet_parser.js:75:16)
-       at Socket.Connection.stream.on.data (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:92:25)
-       at Socket.emit (events.js:198:13)
-       at addChunk (_stream_readable.js:287:12)
-       at readableAddChunk (_stream_readable.js:268:11)
-       at Socket.Readable.push (_stream_readable.js:223:10)
-     code: 'ER_NO_REFERENCED_ROW_2',
-     errno: 1452,
-     sqlState: '23000',
-     sqlMessage:
-      'Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON DELETE CASCADE ON UPDATE CASCADE)',
-     sql:
-      'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-     parameters:
-      [ '90e21378-75c5-4b06-a04a-6843d8f7db08',
-        '14',
-        '90e21378-75c5-4b06-a04a-6843d8f7db08',
-        '分类14',
-        0,
-        '2022-04-07 15:04:10',
-        '2022-04-07 15:04:10' ] },
-  sql:
-   'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-  parameters:
-   [ '90e21378-75c5-4b06-a04a-6843d8f7db08',
-     '14',
-     '90e21378-75c5-4b06-a04a-6843d8f7db08',
-     '分类14',
-     0,
-     '2022-04-07 15:04:10',
-     '2022-04-07 15:04:10' ],
-  table: 'article',
-  fields: [ 'article_id' ],
-  value: '90e21378-75c5-4b06-a04a-6843d8f7db08',
-  index: 'article_categoty_ibfk_1',
-  reltype: 'child' }
-[2022-04-07T23:04:58.247] [ERROR] globalLog - { Error
-    at Query.run (/Users/huanghuilin/Desktop/yy.me-node/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
-    at retry (/Users/huanghuilin/Desktop/yy.me-node/node_modules/sequelize/lib/sequelize.js:313:28)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-  name: 'SequelizeForeignKeyConstraintError',
-  parent:
-   { Error: Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)
-       at Packet.asError (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packets/packet.js:728:17)
-       at Execute.execute (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/commands/command.js:29:26)
-       at Connection.handlePacket (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:456:32)
-       at PacketParser.Connection.packetParser.p [as onPacket] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:85:12)
-       at PacketParser.executeStart (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packet_parser.js:75:16)
-       at Socket.Connection.stream.on.data (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:92:25)
-       at Socket.emit (events.js:198:13)
-       at addChunk (_stream_readable.js:287:12)
-       at readableAddChunk (_stream_readable.js:268:11)
-       at Socket.Readable.push (_stream_readable.js:223:10)
-     code: 'ER_NO_REFERENCED_ROW_2',
-     errno: 1452,
-     sqlState: '23000',
-     sqlMessage:
-      'Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)',
-     sql:
-      'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-     parameters:
-      [ '44973f0c-4aea-4d6c-bf8b-2368c129ba9d',
-        '14',
-        '44973f0c-4aea-4d6c-bf8b-2368c129ba9d',
-        '分类14',
-        0,
-        '2022-04-07 15:04:58',
-        '2022-04-07 15:04:58' ] },
-  original:
-   { Error: Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)
-       at Packet.asError (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packets/packet.js:728:17)
-       at Execute.execute (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/commands/command.js:29:26)
-       at Connection.handlePacket (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:456:32)
-       at PacketParser.Connection.packetParser.p [as onPacket] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:85:12)
-       at PacketParser.executeStart (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packet_parser.js:75:16)
-       at Socket.Connection.stream.on.data (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:92:25)
-       at Socket.emit (events.js:198:13)
-       at addChunk (_stream_readable.js:287:12)
-       at readableAddChunk (_stream_readable.js:268:11)
-       at Socket.Readable.push (_stream_readable.js:223:10)
-     code: 'ER_NO_REFERENCED_ROW_2',
-     errno: 1452,
-     sqlState: '23000',
-     sqlMessage:
-      'Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)',
-     sql:
-      'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-     parameters:
-      [ '44973f0c-4aea-4d6c-bf8b-2368c129ba9d',
-        '14',
-        '44973f0c-4aea-4d6c-bf8b-2368c129ba9d',
-        '分类14',
-        0,
-        '2022-04-07 15:04:58',
-        '2022-04-07 15:04:58' ] },
-  sql:
-   'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-  parameters:
-   [ '44973f0c-4aea-4d6c-bf8b-2368c129ba9d',
-     '14',
-     '44973f0c-4aea-4d6c-bf8b-2368c129ba9d',
-     '分类14',
-     0,
-     '2022-04-07 15:04:58',
-     '2022-04-07 15:04:58' ],
-  table: 'article',
-  fields: [ 'article_id' ],
-  value: '44973f0c-4aea-4d6c-bf8b-2368c129ba9d',
-  index: 'article_categoty_ibfk_1',
-  reltype: 'child' }
-[2022-04-07T23:06:22.399] [ERROR] globalLog - { Error
-    at Query.run (/Users/huanghuilin/Desktop/yy.me-node/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
-    at retry (/Users/huanghuilin/Desktop/yy.me-node/node_modules/sequelize/lib/sequelize.js:313:28)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-  name: 'SequelizeForeignKeyConstraintError',
-  parent:
-   { Error: Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)
-       at Packet.asError (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packets/packet.js:728:17)
-       at Execute.execute (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/commands/command.js:29:26)
-       at Connection.handlePacket (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:456:32)
-       at PacketParser.Connection.packetParser.p [as onPacket] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:85:12)
-       at PacketParser.executeStart (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packet_parser.js:75:16)
-       at Socket.Connection.stream.on.data (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:92:25)
-       at Socket.emit (events.js:198:13)
-       at addChunk (_stream_readable.js:287:12)
-       at readableAddChunk (_stream_readable.js:268:11)
-       at Socket.Readable.push (_stream_readable.js:223:10)
-     code: 'ER_NO_REFERENCED_ROW_2',
-     errno: 1452,
-     sqlState: '23000',
-     sqlMessage:
-      'Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)',
-     sql:
-      'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-     parameters:
-      [ '54912ba8-414d-4fcc-94c4-a5c2b785bce7',
-        '14',
-        '54912ba8-414d-4fcc-94c4-a5c2b785bce7',
-        '分类14',
-        0,
-        '2022-04-07 15:06:22',
-        '2022-04-07 15:06:22' ] },
-  original:
-   { Error: Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)
-       at Packet.asError (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packets/packet.js:728:17)
-       at Execute.execute (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/commands/command.js:29:26)
-       at Connection.handlePacket (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:456:32)
-       at PacketParser.Connection.packetParser.p [as onPacket] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:85:12)
-       at PacketParser.executeStart (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/packet_parser.js:75:16)
-       at Socket.Connection.stream.on.data (/Users/huanghuilin/Desktop/yy.me-node/node_modules/mysql2/lib/connection.js:92:25)
-       at Socket.emit (events.js:198:13)
-       at addChunk (_stream_readable.js:287:12)
-       at readableAddChunk (_stream_readable.js:268:11)
-       at Socket.Readable.push (_stream_readable.js:223:10)
-     code: 'ER_NO_REFERENCED_ROW_2',
-     errno: 1452,
-     sqlState: '23000',
-     sqlMessage:
-      'Cannot add or update a child row: a foreign key constraint fails (`blog`.`article_categoty`, CONSTRAINT `article_categoty_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`article_id`) ON UPDATE CASCADE)',
-     sql:
-      'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-     parameters:
-      [ '54912ba8-414d-4fcc-94c4-a5c2b785bce7',
-        '14',
-        '54912ba8-414d-4fcc-94c4-a5c2b785bce7',
-        '分类14',
-        0,
-        '2022-04-07 15:06:22',
-        '2022-04-07 15:06:22' ] },
-  sql:
-   'INSERT INTO `article_categoty` (`id`,`categoty_id`,`article_id`,`categoty_name`,`version`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?);',
-  parameters:
-   [ '54912ba8-414d-4fcc-94c4-a5c2b785bce7',
-     '14',
-     '54912ba8-414d-4fcc-94c4-a5c2b785bce7',
-     '分类14',
-     0,
-     '2022-04-07 15:06:22',
-     '2022-04-07 15:06:22' ],
-  table: 'article',
-  fields: [ 'article_id' ],
-  value: '54912ba8-414d-4fcc-94c4-a5c2b785bce7',
-  index: 'article_categoty_ibfk_1',
-  reltype: 'child' }
-[2022-04-07T23:11:50.077] [ERROR] globalLog - TypeError: _services_article__WEBPACK_IMPORTED_MODULE_1__.ArticleService.findOne is not a function
-    at Function.searchByArticleId (webpack-internal:///./src/controllers/articleController.js:53:92)
-    at router.get.ctx (webpack-internal:///./src/controllers/index.js:12:126)
+[2022-04-12T19:39:39.494] [ERROR] globalLog - TypeError: schema.validate is not a function
+    at eval (webpack-internal:///./src/middlerwares/validate.middleware.js:20:18)
     at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
     at eval (webpack-internal:///./node_modules/koa-Router/lib/router.js:372:16)
     at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
@@ -231,3 +8,48 @@
     at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
     at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:79:51
     at step (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:38:23)
+    at Object.next (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:19:53)
+[2022-04-12T19:39:55.691] [ERROR] globalLog - TypeError: schema.validate is not a function
+    at eval (webpack-internal:///./src/middlerwares/validate.middleware.js:20:18)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at eval (webpack-internal:///./node_modules/koa-Router/lib/router.js:372:16)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:34:12
+    at dispatch (webpack-internal:///./node_modules/koa-Router/lib/router.js:377:31)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:79:51
+    at step (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:38:23)
+    at Object.next (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:19:53)
+[2022-04-12T19:40:08.806] [ERROR] globalLog - TypeError: schema.validate is not a function
+    at eval (webpack-internal:///./src/middlerwares/validate.middleware.js:20:18)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at eval (webpack-internal:///./node_modules/koa-Router/lib/router.js:372:16)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:34:12
+    at dispatch (webpack-internal:///./node_modules/koa-Router/lib/router.js:377:31)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:79:51
+    at step (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:38:23)
+    at Object.next (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:19:53)
+[2022-04-12T19:40:26.724] [ERROR] globalLog - TypeError: schema.validate is not a function
+    at eval (webpack-internal:///./src/middlerwares/validate.middleware.js:20:18)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at eval (webpack-internal:///./node_modules/koa-Router/lib/router.js:372:16)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:34:12
+    at dispatch (webpack-internal:///./node_modules/koa-Router/lib/router.js:377:31)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:79:51
+    at step (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:38:23)
+    at Object.next (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:19:53)
+[2022-04-12T19:40:29.255] [ERROR] globalLog - TypeError: schema.validate is not a function
+    at eval (webpack-internal:///./src/middlerwares/validate.middleware.js:20:18)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at eval (webpack-internal:///./node_modules/koa-Router/lib/router.js:372:16)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:34:12
+    at dispatch (webpack-internal:///./node_modules/koa-Router/lib/router.js:377:31)
+    at dispatch (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-compose/index.js:42:32)
+    at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:79:51
+    at step (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:38:23)
+    at Object.next (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:19:53)

@@ -3,7 +3,7 @@ import {AppModule} from './app.module'
 
 function bootstrap(){
     const app = AppModule.createApp();
-    app.listen(config.port,(ctx)=>{
+    app.listen(config.port,()=>{
         console.log(`server is running: http://localhost:${config.port}`)
     });
 }
