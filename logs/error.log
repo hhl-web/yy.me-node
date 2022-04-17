@@ -53,3 +53,31 @@
     at /Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:79:51
     at step (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:38:23)
     at Object.next (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa2-connect-history-api-fallback/dist/index.js:19:53)
+[2022-04-16T19:56:57.209] [ERROR] globalLog - AssertionError [ERR_ASSERTION]: invalid status code: 0
+    at Object.set status [as status] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa/lib/response.js:87:5)
+    at Function.searchByArticleId (webpack-internal:///./src/controllers/articleController.js:57:25)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async eval (webpack-internal:///./src/middlerwares/validate.middleware.js:26:7)
+    at async bodyParser (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-bodyparser/index.js:95:5)
+    at async eval (webpack-internal:///./src/middlerwares/cors.middleware.js:38:9)
+    at async eval (webpack-internal:///./src/middlerwares/error.middleware.js:13:9) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
+[2022-04-16T19:57:03.412] [ERROR] globalLog - AssertionError [ERR_ASSERTION]: invalid status code: 0
+    at Object.set status [as status] (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa/lib/response.js:87:5)
+    at Function.searchByArticleId (webpack-internal:///./src/controllers/articleController.js:57:25)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async eval (webpack-internal:///./src/middlerwares/validate.middleware.js:26:7)
+    at async bodyParser (/Users/huanghuilin/Desktop/yy.me-node/node_modules/koa-bodyparser/index.js:95:5)
+    at async eval (webpack-internal:///./src/middlerwares/cors.middleware.js:38:9)
+    at async eval (webpack-internal:///./src/middlerwares/error.middleware.js:13:9) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}

@@ -1,5 +1,5 @@
-const { merge } = require('webpack-merge')
-const baseConfig = require('./webpack.config.base')
+const { merge } = require('webpack-merge');
+const baseConfig = require('./webpack.config.base');
 
 // 通过webpack-merge合并基础配置，添加开发时配置
 const webpackConfig = merge(baseConfig, {
@@ -7,8 +7,8 @@ const webpackConfig = merge(baseConfig, {
   devtool: 'eval-source-map', // 开发时出错能知道在源代码中哪一行
   stats: {
     children: false, // webpack打包时子模块信息设置不显示
-    modules: false // 不显示模块信息
-  }
-})
+    modules: false, // 不显示模块信息
+  },
+});
 
-module.exports = webpackConfig
+module.exports = webpackConfig;

@@ -1,9 +1,9 @@
-import {Article} from '../models/article';
-import {ArticleCategoty} from '../models/article_category';
+import { Article } from '../models/article';
+import { ArticleCategoty } from '../models/article_category';
 import ArticleTag from '../models/article_tag';
 import CommentTable from '../models/comment_table';
 import ReplayTable from '../models/replay_table';
-import {sequelize} from './db.js';
+import { sequelize } from './db.js';
 import { LoggerInterceptor } from '../interceptor/logger.interceptor.js';
 
 /**
@@ -14,39 +14,30 @@ import { LoggerInterceptor } from '../interceptor/logger.interceptor.js';
  * sourceKey : 主表Article 的主键
  */
 
-(async ()=>{
-    try{
-        Article.hasMany(ArticleCategoty,{
-            as:'categotys',
-            foreignKey: {
-                allowNull: false,
-                name: "article_id"
-            },
-        })
-        ArticleCategoty.belongsTo(Article,{
-            as:'articles',
-            foreignKey: {
-                allowNull: false,
-                name: "article_id"
-            },
-        });
-        await sequelize.sync({
-            force: false, alter:true
-        });
-    }catch(error){
-        // new LoggerInterceptor()
-        console.log(error)
-    }
-})()
+(async () => {
+  try {
+    Article.hasMany(ArticleCategoty, {
+      as: 'categotys',
+      foreignKey: {
+        allowNull: false,
+        name: 'article_id',
+      },
+    });
+    ArticleCategoty.belongsTo(Article, {
+      as: 'articles',
+      foreignKey: {
+        allowNull: false,
+        name: 'article_id',
+      },
+    });
+    await sequelize.sync({
+      force: false,
+      alter: true,
+    });
+  } catch (error) {
+    // new LoggerInterceptor()
+    console.log(error);
+  }
+})();
 
-
-
-
-export {
-    ArticleCategoty,
-    ArticleTag,
-    Article,
-    CommentTable,
-    ReplayTable
-}
-
+export { ArticleCategoty, ArticleTag, Article, CommentTable, ReplayTable };
