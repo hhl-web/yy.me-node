@@ -27,7 +27,7 @@ export class CorsMiddleware {
       ctx.set('Content-Type', 'application/json;charset=utf-8');
       ctx.set('Access-Control-Allow-Credentials', true);
       ctx.set('Access-Control-Max-Age', String(1728000));
-      if (ctx.method == 'OPTIONS') {
+      if (ctx.method === 'OPTIONS') {
         ctx.body = '';
         ctx.status = 204;
       } else {

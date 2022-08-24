@@ -7,10 +7,6 @@ const schema = new Schema();
 
 export class InitController {
   static init(app) {
-    // router.post('/api/error/error.gif', (ctx) =>{
-    //   console.log(ctx,ctx.request.body);
-    //   ctx.status =200;
-    // });
     router.get('/api/article/searchByCategoty', ValidateMiddleware.validate(schema.searchByCategoty()), (ctx) => ArticleController.searchByCategoty(ctx));
     router.get('/api/article/searchByArticleId', ValidateMiddleware.validate(schema.searchByArticleId()), (ctx) => ArticleController.searchByArticleId(ctx));
     router.post('/api/article/create', ValidateMiddleware.validate(schema.create()), (ctx) => ArticleController.create(ctx));

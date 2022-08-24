@@ -10,7 +10,7 @@ export const Article = defineModel('article', {
     primaryKey: true, // 是否主键
     // autoIncrement: true
   },
-  /**文章标题 */
+  /** 文章标题 */
   title: {
     type: Sequelize.STRING, // 字段类型
     allowNull: false, // 是否允许为空
